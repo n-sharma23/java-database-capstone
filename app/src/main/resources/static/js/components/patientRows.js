@@ -2,21 +2,30 @@
 export function createPatientRow(patient, appointmentId, doctorId) {
   const tr = document.createElement("tr");
   console.log("CreatePatientRow :: ", doctorId)
-  tr.innerHTML = `
-      <td class="patient-id">${patient.id}</td>
-      <td>${patient.name}</td>
-      <td>${patient.phone}</td>
-      <td>${patient.email}</td>
-      <td><img src="../assets/images/addPrescriptionIcon/addPrescription.png" alt="addPrescriptionIcon" class="prescription-btn" data-id="${patient.id}"></img></td>
-    `;
 
-  // Attach event listeners
-  tr.querySelector(".patient-id").addEventListener("click", () => {
-    window.location.href = `/pages/patientRecord.html?id=${patient.id}&doctorId=${doctorId}`;
+  // Patient details are user-entered, so they go in with textContent rather than innerHTML.
+  const cells = [patient.id, patient.name, patient.phone, patient.email].map((value) => {
+    const td = document.createElement("td");
+    td.textContent = value;
+    return td;
   });
+  cells[0].className = "patient-id";
 
-  tr.querySelector(".prescription-btn").addEventListener("click", () => {
-    window.location.href = `/pages/addPrescription.html?appointmentId=${appointmentId}&patientName=${patient.name}`;
+  const actionCell = document.createElement("td");
+  const icon = document.createElement("img");
+  icon.src = "../assets/images/addPrescriptionIcon/addPrescription.png";
+  icon.alt = "addPrescriptionIcon";
+  icon.className = "prescription-btn";
+  icon.dataset.id = patient.id;
+  actionCell.appendChild(icon);
+
+  tr.append(...cells, actionCell);
+
+  cells[0].addEventListener("click", () => {
+    window.location.href = `/pages/patientRecord.html?id=${encodeURIComponent(patient.id)}&doctorId=${encodeURIComponent(doctorId)}`;
+  });
+  icon.addEventListener("click", () => {
+    window.location.href = `/pages/addPrescription.html?appointmentId=${encodeURIComponent(appointmentId)}&patientName=${encodeURIComponent(patient.name)}`;
   });
 
   return tr;
