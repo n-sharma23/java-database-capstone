@@ -1,0 +1,6 @@
+mysql> CALL GetDoctorWithMostPatientsByMonth(12, 2026);
++-----------+-----------------+---------------+
+| doctor_id | doctor_name     | patients_seen |
++-----------+-----------------+---------------+
+|         1 | Dr. Emily Adams |             4 |
++-----------+-----------------+---------------+

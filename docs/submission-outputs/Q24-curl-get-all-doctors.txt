@@ -1,0 +1,97 @@
+$ curl -s http://localhost:8080/doctor
+{
+    "doctors": [
+        {
+            "id": 1,
+            "name": "Dr. Emily Adams",
+            "specialty": "cardiologist",
+            "email": "emily.adams@clinic.example",
+            "phone": "5551012020",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "14:00-15:00"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Dr. Mark Johnson",
+            "specialty": "neurologist",
+            "email": "mark.johnson@clinic.example",
+            "phone": "5552023030",
+            "availableTimes": [
+                "10:00-11:00",
+                "11:00-12:00",
+                "15:00-16:00"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Dr. Sarah Lee",
+            "specialty": "pediatrician",
+            "email": "sarah.lee@clinic.example",
+            "phone": "5553034040",
+            "availableTimes": [
+                "09:00-10:00",
+                "13:00-14:00",
+                "16:00-17:00"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Dr. Priya Nair",
+            "specialty": "dermatologist",
+            "email": "priya.nair@clinic.example",
+            "phone": "5554045050",
+            "availableTimes": [
+                "11:00-12:00",
+                "14:00-15:00"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Dr. Alan Brooks",
+            "specialty": "cardiologist",
+            "email": "alan.brooks@clinic.example",
+            "phone": "5555056060",
+            "availableTimes": [
+                "15:00-16:00",
+                "16:00-17:00"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Dr. Olivia Chen",
+            "specialty": "dentist",
+            "email": "olivia.chen@clinic.example",
+            "phone": "5556067070",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "11:00-12:00"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Dr. Ravi Menon",
+            "specialty": "orthopedic",
+            "email": "ravi.menon@clinic.example",
+            "phone": "5557078080",
+            "availableTimes": [
+                "10:00-11:00",
+                "12:00-13:00"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Dr. Neha Kapoor",
+            "specialty": "gynecologist",
+            "email": "neha.kapoor@clinic.example",
+            "phone": "5558089090",
+            "availableTimes": [
+                "09:00-10:00",
+                "11:00-12:00"
+            ]
+        }
+    ]
+}

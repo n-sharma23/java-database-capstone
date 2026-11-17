@@ -1,0 +1,67 @@
+# Step 1: log in as the patient. The response contains a JWT (shortened here).
+$ curl -s -X POST http://localhost:8080/patient/login -H "Content-Type: application/json" -d '{"email":"john.smith@mail.example","password":"patient@123"}'
+{"token": "eyJhbGciOiJIUzUxMiJ9.eyJ...Ut8muZ9u5Q"}
+
+# Step 2: get the patient id from the token.
+$ curl -s http://localhost:8080/patient/$TOKEN
+{
+    "patient": {
+        "id": 1,
+        "name": "John Smith",
+        "email": "john.smith@mail.example",
+        "phone": "8881112222",
+        "address": "12 Oak Street, Springfield"
+    }
+}
+
+# Step 3: get all appointments booked by this patient.
+$ curl -s http://localhost:8080/patient/1/patient/$TOKEN
+{
+    "appointments": [
+        {
+            "id": 1,
+            "doctorId": 1,
+            "doctorName": "Dr. Emily Adams",
+            "patientId": 1,
+            "patientName": "John Smith",
+            "patientEmail": "john.smith@mail.example",
+            "patientPhone": "8881112222",
+            "patientAddress": "12 Oak Street, Springfield",
+            "appointmentTime": "2026-12-01T09:00:00",
+            "status": 0,
+            "appointmentDate": "2026-12-01",
+            "appointmentTimeOnly": "09:00:00",
+            "endTime": "2026-12-01T10:00:00"
+        },
+        {
+            "id": 5,
+            "doctorId": 1,
+            "doctorName": "Dr. Emily Adams",
+            "patientId": 1,
+            "patientName": "John Smith",
+            "patientEmail": "john.smith@mail.example",
+            "patientPhone": "8881112222",
+            "patientAddress": "12 Oak Street, Springfield",
+            "appointmentTime": "2026-12-15T10:00:00",
+            "status": 1,
+            "appointmentDate": "2026-12-15",
+            "appointmentTimeOnly": "10:00:00",
+            "endTime": "2026-12-15T11:00:00"
+        },
+        {
+            "id": 8,
+            "doctorId": 2,
+            "doctorName": "Dr. Mark Johnson",
+            "patientId": 1,
+            "patientName": "John Smith",
+            "patientEmail": "john.smith@mail.example",
+            "patientPhone": "8881112222",
+            "patientAddress": "12 Oak Street, Springfield",
+            "appointmentTime": "2026-12-02T15:00:00",
+            "status": 1,
+            "appointmentDate": "2026-12-02",
+            "appointmentTimeOnly": "15:00:00",
+            "endTime": "2026-12-02T16:00:00"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+mysql> SELECT id, name, email, phone, address FROM patient LIMIT 5;
++----+--------------+---------------------------+------------+----------------------------+
+| id | name         | email                     | phone      | address                    |
++----+--------------+---------------------------+------------+----------------------------+
+|  1 | John Smith   | john.smith@mail.example   | 8881112222 | 12 Oak Street, Springfield |
+|  2 | Aisha Khan   | aisha.khan@mail.example   | 8882223333 | 48 Pine Road, Riverton     |
+|  3 | Rahul Verma  | rahul.verma@mail.example  | 8883334444 | 7 Lake View, Hillcrest     |
+|  4 | Maria Garcia | maria.garcia@mail.example | 8884445555 | 301 Elm Avenue, Fairview   |
+|  5 | Liam O'Brien | liam.obrien@mail.example  | 8885556666 | 19 Cedar Lane, Brookside   |
++----+--------------+---------------------------+------------+----------------------------+

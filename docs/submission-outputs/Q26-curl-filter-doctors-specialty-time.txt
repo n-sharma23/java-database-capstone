@@ -1,0 +1,17 @@
+$ curl -s http://localhost:8080/doctor/filter/null/AM/cardiologist
+{
+    "doctors": [
+        {
+            "id": 1,
+            "name": "Dr. Emily Adams",
+            "specialty": "cardiologist",
+            "email": "emily.adams@clinic.example",
+            "phone": "5551012020",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "14:00-15:00"
+            ]
+        }
+    ]
+}
